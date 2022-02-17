@@ -1,0 +1,314 @@
+:root {
+  --primary: #000;
+  --secondary: #208aae;
+  --debug: red;
+  --border: #208aae;
+}
+
+.page__container {
+  overflow: hidden;
+  padding-bottom: 50px;
+  /* border: 1px solid var(--debug); */
+}
+
+.page__container_header {
+  padding: 50px 10px;
+}
+
+.page__container_header > h1 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 44px;
+  color: var(--primary);
+}
+
+.page__section {
+  padding: 0 10px;
+}
+
+.page__section > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page__container_cards > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page__container_cards_item {
+  width: 19%;
+  border: 1px solid var(--border);
+  box-shadow: -1px 10px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.page__container_cards_item > h4 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 44px;
+  color: var(--primary);
+  min-height: 100px;
+}
+
+.page__container_cards_item > p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 44px;
+  color: var(--primary);
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.page__container_nav {
+  margin-top: 50px;
+}
+
+.page__container_nav > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border);
+}
+
+.page__container_nav_list {
+  width: calc(100% - 100px);
+}
+
+.page__container_nav_list > span {
+  margin-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 44px;
+  color: var(--primary);
+  border-bottom: 5px solid var(--border);
+  cursor: pointer;
+}
+
+.page__container_nav_display {
+  width: 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page__container_nav_display > div {
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+}
+
+.page__container__search__box {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.page__container__search__box > input {
+  width: calc(100% - 40px);
+  height: 40px;
+  border: 0;
+  outline: none;
+  padding: 0 5px;
+}
+
+.page__container__search__box > button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  outline: none;
+}
+
+.page__container__table {
+  margin-top: 20px;
+}
+
+.page__container__table > table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.page__container__table > table > thead > tr {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.page__container__table > table > thead > tr > th {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #434343;
+  padding: 10px;
+  position: relative;
+  text-align: left;
+}
+
+.page__container__table > table > tbody > tr {
+  background-color: transparent;
+}
+
+.page__container__table > table > tbody > tr > td {
+  padding: 30px 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: #130e00;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  white-space: wrap;
+}
+
+.page__container__table > table > tbody > tr > td > span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.page__container__card {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-bottom: 50px;
+}
+
+.page__container__card > div {
+  border: 1px solid var(--border);
+  box-shadow: -1px 10px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.page__container__card > div > p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: #130e00;
+  text-align: right;
+}
+
+.page__container__card > div > h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: #130e00;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.page__container__card > div > div {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: #130e00;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  margin-bottom: 30px;
+}
+
+.page__container__card > div > span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline;
+  color: var(--secondary);
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.page__section_paginate {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+}
+
+.page__section_paginate_total {
+  width: calc(100% - 500px);
+  font-style: normal;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: #130e00;
+}
+
+.page__section_paginate_total > span {
+  font-weight: bolder;
+}
+
+.page__section_paginate_pages {
+  width: 500px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.page__section_paginate_pages > div {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-left: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.002em;
+  color: #000;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
