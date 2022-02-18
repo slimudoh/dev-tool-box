@@ -1,7 +1,62 @@
+import React, { useState } from "react";
+
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import Category from "../components/Category";
+import Pagination from "../components/Pagination";
+import Table from "../components/Table";
+import Block from "../components/Block";
+
 const Home: NextPage = () => {
+  const [view, setView] = useState("table");
+  const [navItem, setNavItem] = useState("all");
+
+  let category = [
+    {
+      name: "React",
+      total: 34,
+    },
+    {
+      name: "Vue",
+      total: 34,
+    },
+    {
+      name: "Angular",
+      total: 34,
+    },
+    {
+      name: "Nodejs",
+      total: 34,
+    },
+  ];
+
+  let tableData = [
+    {
+      id: 1,
+      dateAdded: "2nd of June 2020",
+      name: "Icons",
+      category: "React",
+      description: "testing",
+    },
+    {
+      id: 2,
+      dateAdded: "2nd of June 2020",
+      name: "Icons",
+      category: "React",
+      description: "testing",
+    },
+    {
+      id: 3,
+      dateAdded: "2nd of June 2020",
+      name: "Icons",
+      category: "React",
+      description: "testing",
+    },
+  ];
+
+  let navList = ["React", "Vue", "Node"];
+
   return (
     <div>
       <Head>
@@ -16,47 +71,48 @@ const Home: NextPage = () => {
           <h1>Dev Toolbox</h1>
         </section>
 
-        <section className="page__section page__container_cards">
-          <div>
-            <div className="page__container_cards_item">
-              <h4>React</h4>
-              <p>53</p>
-            </div>
-          </div>
-        </section>
+        <Category category={category} />
 
         <section className="page__section page__container_nav">
           <div>
             <div className="page__container_nav_list">
-              <span>All</span>
-              <span>React</span>
+              <span
+                style={
+                  navItem === "all" ? { borderBottom: "5px solid #208aae" } : {}
+                }
+                onClick={() => setNavItem("all")}
+              >
+                All
+              </span>
+              {navList.map((item, index) => (
+                <span
+                  key={index}
+                  style={
+                    navItem === item
+                      ? { borderBottom: "5px solid #208aae" }
+                      : {}
+                  }
+                  onClick={() => setNavItem(item)}
+                >
+                  {item}
+                </span>
+              ))}
             </div>
             <div className="page__container_nav_display">
-              <div>
+              <div
+                onClick={() => setView("table")}
+                style={
+                  view === "table"
+                    ? { backgroundColor: "rgba(0, 0, 0, 0.08)" }
+                    : {}
+                }
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
                   aria-hidden="true"
                   role="img"
-                  class="iconify iconify--gg"
-                  width="32"
-                  height="32"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M4 4h4v4H4V4Zm0 6h4v4H4v-4Zm4 6H4v4h4v-4Zm2-12h4v4h-4V4Zm4 6h-4v4h4v-4Zm-4 6h4v4h-4v-4ZM20 4h-4v4h4V4Zm-4 6h4v4h-4v-4Zm4 6h-4v4h4v-4Z"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  role="img"
-                  class="iconify iconify--ic"
+                  className="iconify iconify--ic"
                   width="32"
                   height="32"
                   preserveAspectRatio="xMidYMid meet"
@@ -65,6 +121,31 @@ const Home: NextPage = () => {
                   <path
                     fill="currentColor"
                     d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                  ></path>
+                </svg>
+              </div>
+              <div
+                onClick={() => setView("block")}
+                style={
+                  view === "block"
+                    ? { backgroundColor: "rgba(0, 0, 0, 0.08)" }
+                    : {}
+                }
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  aria-hidden="true"
+                  role="img"
+                  className="iconify iconify--gg"
+                  width="32"
+                  height="32"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4 4h4v4H4V4Zm0 6h4v4H4v-4Zm4 6H4v4h4v-4Zm2-12h4v4h-4V4Zm4 6h-4v4h4v-4Zm-4 6h4v4h-4v-4ZM20 4h-4v4h4V4Zm-4 6h4v4h-4v-4Zm4 6h-4v4h4v-4Z"
                   ></path>
                 </svg>
               </div>
@@ -82,7 +163,7 @@ const Home: NextPage = () => {
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     aria-hidden="true"
                     role="img"
-                    class="iconify iconify--ri"
+                    className="iconify iconify--ri"
                     width="20"
                     height="20"
                     preserveAspectRatio="xMidYMid meet"
@@ -98,100 +179,14 @@ const Home: NextPage = () => {
             </form>
           </div>
         </section>
-        <section className="page__section">
-          <div>
-            <div className="page__container__table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Date Added</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th style={{ width: "50px" }}></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2nd of June 2020</td>
-                    <td>Icons</td>
-                    <td>React</td>
-                    <td>testing</td>
-                    <td style={{ width: "50px" }}>
-                      <span>View</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
 
-        <section className="page__section">
-          <div>
-            <div className="page__container__card">
-              <div>
-                <p>2nd of June 2020</p>
-                <h4>React</h4>
-                <div>testing</div>
-                <span>View</span>
-              </div>
-            </div>
-          </div>
-        </section>
+        {view === "table" ? (
+          <Table tableData={tableData} />
+        ) : (
+          <Block blockData={tableData} />
+        )}
 
-        <section className="page__section">
-          <div>
-            <div className="page__section_paginate">
-              <div className="page__section_paginate_total">
-                <span>10</span> of <span> 100</span>
-              </div>
-              <div className="page__section_paginate_pages">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true"
-                    role="img"
-                    class="iconify iconify--ic"
-                    width="32"
-                    height="32"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M15.41 7.41L14 6l-6 6l6 6l1.41-1.41L10.83 12z"
-                    ></path>
-                  </svg>
-                </div>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true"
-                    role="img"
-                    class="iconify iconify--ic"
-                    width="32"
-                    height="32"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M10 6L8.59 7.41L13.17 12l-4.58 4.59L10 18l6-6l-6-6z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Pagination />
       </main>
     </div>
   );

@@ -37,18 +37,18 @@
 }
 
 .page__container_cards > div {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .page__container_cards_item {
-  width: 19%;
-  border: 1px solid var(--border);
+  /* width: 19%; */
+  /* border: 1px solid var(--border); */
   box-shadow: -1px 10px 15px rgba(0, 0, 0, 0.05);
   border-radius: 3px;
   padding: 10px;
+  background-color: var(--border);
 }
 
 .page__container_cards_item > h4 {
@@ -56,7 +56,7 @@
   font-weight: bold;
   font-size: 25px;
   line-height: 44px;
-  color: var(--primary);
+  color: #fff;
   min-height: 100px;
 }
 
@@ -65,7 +65,7 @@
   font-weight: normal;
   font-size: 20px;
   line-height: 44px;
-  color: var(--primary);
+  color: #fff;
   text-align: right;
   margin-bottom: 0;
 }
@@ -97,7 +97,7 @@
   font-size: 16px;
   line-height: 44px;
   color: var(--primary);
-  border-bottom: 5px solid var(--border);
+  border-bottom: 5px solid transparent;
   cursor: pointer;
 }
 
@@ -143,6 +143,7 @@
 
 .page__container__table {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .page__container__table > table {
@@ -201,7 +202,8 @@
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .page__container__card > div {
@@ -232,6 +234,20 @@
   overflow: hidden !important;
   text-overflow: ellipsis;
   margin-top: 30px;
+  /* margin-bottom: 20px; */
+}
+
+.page__container__card > div > h6 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: #130e00;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
