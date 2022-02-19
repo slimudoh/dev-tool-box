@@ -188,6 +188,9 @@ const Home: NextPage = () => {
 
         <Pagination />
       </main>
+      <main className="page__container_mobile">
+        Not yet available for mobile.
+      </main>
     </div>
   );
 };

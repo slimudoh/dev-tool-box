@@ -11,6 +11,27 @@
   /* border: 1px solid var(--debug); */
 }
 
+.page__container_mobile {
+  display: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 44px;
+  color: #000;
+  text-align: center;
+  padding-top: 100px;
+}
+
+@media (max-width: 1000px) {
+  .page__container {
+    display: none;
+  }
+
+  .page__container_mobile {
+    display: block;
+  }
+}
+
 .page__container_header {
   padding: 50px 10px;
 }
