@@ -60,7 +60,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Dev Tool box</title>
+        <title>Dev Tool Box</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
 
       <main className="page__container">
         <section className="page__container_header">
-          <h1>Dev Toolbox</h1>
+          <h1>Dev Tool Box</h1>
         </section>
 
         <Category category={category} />
